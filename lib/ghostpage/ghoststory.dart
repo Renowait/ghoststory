@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:fluttepro/ghostpage/ghost.dart';
 import 'package:fluttepro/ghostpage/ghost_story.dart';
 import 'package:flutter/material.dart';
@@ -309,6 +310,53 @@ class _StoryListScreenState extends State<StoryListScreen> {
       category: 'international',
     ),
   ];
+  
+  final AudioPlayer audioPlayer = AudioPlayer();
+  bool isPlaying = true; // สถานะการเล่นเพลง
+  double volume = 0.5; // ระดับเสียงเริ่มต้น (0.0 - 1.0)
+
+  @override
+  void initState() {
+    super.initState();
+    _startBackgroundMusic(); // เริ่มเล่นเพลงเมื่อหน้าโหลด
+  }
+
+  @override
+  void dispose() {
+    audioPlayer.stop(); // หยุดเพลงเมื่อออกจากหน้า
+    audioPlayer.dispose();
+    super.dispose();
+  }
+
+  // ฟังก์ชันเริ่มเล่นเพลงพื้นหลังแบบวนซ้ำ
+  Future<void> _startBackgroundMusic() async {
+    await audioPlayer.setSource(AssetSource('background_music.mp3'));
+    await audioPlayer.setVolume(volume);
+    await audioPlayer.setReleaseMode(ReleaseMode.loop); // เล่นวนซ้ำ
+    if (isPlaying) {
+      await audioPlayer.resume();
+    }
+  }
+
+  // ฟังก์ชันสลับสถานะการเล่น/หยุดเพลง
+  void _toggleMusic() {
+    setState(() {
+      isPlaying = !isPlaying;
+      if (isPlaying) {
+        audioPlayer.resume();
+      } else {
+        audioPlayer.pause();
+      }
+    });
+  }
+
+  // ฟังก์ชันปรับระดับเสียง
+  void _setVolume(double newVolume) {
+    setState(() {
+      volume = newVolume;
+      audioPlayer.setVolume(volume);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -336,13 +384,7 @@ class _StoryListScreenState extends State<StoryListScreen> {
                   child: IconButton(
                     icon: const Icon(Icons.settings, color: Colors.white),
                     onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('ฟังก์ชันยังไม่พร้อมใช้งาน'),
-                          duration:
-                              Duration(seconds: 2), 
-                        ),
-                      );
+                      _showSettingsDialog(context); // แสดงหน้าต่างตั้งค่า
                     },
                   ),
                 ),
@@ -438,6 +480,84 @@ class _StoryListScreenState extends State<StoryListScreen> {
           ),
         ],
       ),
+    );
+  }
+  void _showSettingsDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: Colors.black87, 
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+            side: const BorderSide(color: Colors.red, width: 2), 
+          ),
+          title: const Text(
+            'ตั้งค่าเสียง',
+            style: TextStyle(
+              color: Colors.red, 
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          content: StatefulBuilder(
+            builder: (context, setStateDialog) {
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'เปิด/ปิดเสียง',
+                        style: TextStyle(color: Colors.white), 
+                      ),
+                      Switch(
+                        value: isPlaying,
+                        activeColor: Colors.red, 
+                        inactiveThumbColor: Colors.grey, 
+                        inactiveTrackColor: Colors.grey.shade800, 
+                        onChanged: (value) {
+                          setStateDialog(() {
+                            _toggleMusic();
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  const Text(
+                    'ระดับเสียง',
+                    style: TextStyle(color: Colors.white), 
+                  ),
+                  Slider(
+                    value: volume,
+                    min: 0.0,
+                    max: 1.0,
+                    activeColor: Colors.red, 
+                    inactiveColor: Colors.grey.shade800, 
+                    onChanged: (value) {
+                      setStateDialog(() {
+                        _setVolume(value);
+                      });
+                    },
+                  ),
+                ],
+              );
+            },
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                'ปิด',
+                style: TextStyle(color: Colors.red), 
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

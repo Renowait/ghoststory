@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   animated_splash_screen: ^1.3.0
+  audioplayers: ^6.2.0
   flutter:
     sdk: flutter
   flutter_launcher_icons: ^0.14.3
@@ -43,3 +44,4 @@ flutter:
     - assets/animation/
     - assets/gif/
     - assets/image/
+    - assets/song/
