@@ -1,6 +1,6 @@
 import 'package:fluttepro/ghostpage/catgoryghostlist.dart';
 import 'package:flutter/material.dart';
-// นำเข้าหน้าหมวดหมู่
+
 
 void main() {
   runApp(const GhostStoryApp());

@@ -1,4 +1,5 @@
 // favoritesghost.dart
+import 'package:fluttepro/ghostpage/ghost_story.dart';
 import 'package:flutter/material.dart';
 import 'ghost.dart';
 import 'ghoststory.dart'; 

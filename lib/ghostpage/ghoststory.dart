@@ -1,4 +1,5 @@
 import 'package:fluttepro/ghostpage/ghost.dart';
+import 'package:fluttepro/ghostpage/ghost_story.dart';
 import 'package:flutter/material.dart';
 
 class StoryListScreen extends StatefulWidget {
@@ -19,7 +20,7 @@ class _StoryListScreenState extends State<StoryListScreen> {
           "นั้นคือคำพูดสุดท้ายที่ เด็ก 3 คนนั้นจะอยู่ในโรงเรียนที่นี้ เพราะ3คนนี้เจออะไรไม่รู้ ขาลาออกเพื่อไปเรียนที่อื่น\n\n"
           "ปัจจุบัน รร.นี้และที่ตั้งห้องน้ำข้างสนามก็ได้ทุบทิ้ง และเป็นตึก ICT แล้ว แต่เชื่อไหม ว่าทุกวันนี้เด็กนักเรียนบางคนยังเห็นผีผู้หญิงคนนั้นอยู่ตรงจุดตึก ICT อยู่เลย...",
       imagePath: 'assets/image/ห้องน้ำ.jpg',
-      category: '',
+      category: 'university',
     ),
     GhostStory(
       title: "ห้องนาฏศิลป์",
@@ -33,7 +34,7 @@ class _StoryListScreenState extends State<StoryListScreen> {
           "ครูเลยบอกให้เด็กนักเรียนได้รู้ว่า **รู้ไหมทำ รร.ของเราถึงนาฏศิลป์ดัง เพราะแต่ก่อนมีครูที่เป็นหัวหน้ากลุ่มสาระนาฏศิลป์ที่คอยสอนเด็กอย่างเคร่งคัด เขาตั้งใจมากๆในการรำนี้ จนมาวันหนึ่งครูก็ป่วยแล้วได้เสียชีวิตลง เด็กนักเรียนที่เคยเป็นเด็กนางรำในตอนนั้นก็เสียใจกันมาก แต่เด็กนางรำยุคนั้นเริ่มทยอยลาออกกันเพราะ ว่าทุกเย็นจะมีนักเรียนคนใดคนหนึ่งอยู่ๆก็ขยับตัวเองไม่ได้แล้วรำตามเพลงที่เปิด ให้นักเรียนคนอื่นรำตาม เหมือนเข้ามาสิงร่างเพื่อที่จะมาสอนรำ จนทำให้เกิดหวาดกลัวกัน** นิมนพระมา พระก็ได้บอกไว้ว่า เขาเป็นครูเขามาดี แต่ถ้าใครที่ดื้อไม่ฟังครูบาอาจารก็สมควรที่จะโดนสั่งสอนนะ\n\n"
           "นั้นเลยทำให้นักเรียน ทั้ง5 และ พานโรงป้าเอ ไม่กล้าไปนอนที่ห้องนาฏศิลป์อีกเลย",
       imagePath: 'assets/image/ห้องดนตรี.jpg',
-      category: '',
+      category: 'university',
     ),
     GhostStory(
       title: "ห้องพักครูภาควิชาภาษาไทย",
@@ -54,7 +55,7 @@ class _StoryListScreenState extends State<StoryListScreen> {
           "ที่นี้มีผีอยู่ เป็นแฝดของลุงยามคนนั้น เขาตายใน รร.เพราะมีอยู่วันหนึ่ง มีโจรเข้ามาในชุดครูโหมดภาษาไทยเรานี้แหละพาพวกหลายคนมาจะขโมยคอม รร. และอุปกรณ์ทุกอย่าง ลุงยามคนนั้นเขาจับได้เลยจะพยายามสกัดไว้ แต่สุดท้ายเขาโดนทำร้ายร่างกาย แขนหัก หน้าเละ สภาพศพคือจำไม่ได้เลย แล้วก่อนเขาจะตาย เห็นมีแต่คนบอกว่า เขายืมดูคนจากข้างล่างอาคาร2นี้แหละ\n\n"
           "ครูโมตกใจหนักกว่าเดิมเพราะคนที่คุยด้วยเมื่อคืนไม่ใช่ลุงยามที่อยู่ป้อม รปภ. แต่เป็นผี",
       imagePath: 'assets/image/ห้องพัครู.jpg',
-      category: '',
+      category: 'university',
     ),
     GhostStory(
       title: "ห้องน้ำชั้น 5 ที่ไม่มีใครใช้",
@@ -79,7 +80,7 @@ class _StoryListScreenState extends State<StoryListScreen> {
           "รุ่นพี่เล่าว่า... เมื่อหลายปีก่อน มีนักศึกษาหญิงเครียดจัด กรีดข้อมือตัวเองในห้องน้ำนั้น และไม่มีใครรู้จนกระทั่งศพของเธอถูกพบในวันรุ่งขึ้น\n\n"
           "ตั้งแต่นั้นมา ถ้ามีใครเข้าไปใช้ห้องน้ำคนเดียว... ก็อาจจะไม่ได้ออกมาเป็นคนเดิม",
       imagePath: 'assets/image/ห้องน้ำ2.jpg',
-      category: '',
+      category: 'university',
     ),
     GhostStory(
       title: "หอพักที่มีเพื่อนร่วมห้องที่มองไม่เห็น",
@@ -102,7 +103,7 @@ class _StoryListScreenState extends State<StoryListScreen> {
           "พลอยขนลุกวาบ เธอตัดสินใจย้ายออกจากห้องทันที\n\n"
           "หลังจากนั้น ห้อง 409 ก็ถูกปล่อยร้าง... ไม่มีใครกล้าเข้าไปอยู่เลย",
       imagePath: 'assets/image/หอพัก.jpg',
-      category: '',
+      category: 'university',
     ),
     GhostStory(
       title: "ศาลพระภูมิที่ยังมีเจ้าของอยู่",
@@ -127,7 +128,7 @@ class _StoryListScreenState extends State<StoryListScreen> {
           "หลังจากทำพิธีขอขมา อาการของต้นก็ค่อย ๆ ดีขึ้น\n\n"
           "แต่เขาไม่เคยกล้าเดินผ่านศาลพระภูมิหลังโรงอาหารอีกเลย",
       imagePath: 'assets/image/ศาส.jpg',
-      category: '',
+      category: 'university',
     ),
     GhostStory(
       title: "เพื่อนที่กลับหอพักไม่ทัน",
@@ -314,11 +315,11 @@ class _StoryListScreenState extends State<StoryListScreen> {
     return Scaffold(
       body: Column(
         crossAxisAlignment:
-            CrossAxisAlignment.start, // แก้ไขที่นี่เพื่อให้ชิดซ้าย
+            CrossAxisAlignment.start, 
         children: [
-          // แบนเนอร์ด้านบนเหมือนในภาพ
+          
           Container(
-            height: 200, // ปรับขนาดตามภาพ
+            height: 200, 
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
@@ -339,7 +340,7 @@ class _StoryListScreenState extends State<StoryListScreen> {
                         const SnackBar(
                           content: Text('ฟังก์ชันยังไม่พร้อมใช้งาน'),
                           duration:
-                              Duration(seconds: 2), // ระยะเวลาที่แจ้งเตือนแสดง
+                              Duration(seconds: 2), 
                         ),
                       );
                     },
@@ -362,7 +363,7 @@ class _StoryListScreenState extends State<StoryListScreen> {
               textAlign: TextAlign.left,
             ),
           ),
-          // รายการเรื่องผีด้านล่าง
+          
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.all(16.0),
@@ -441,55 +442,3 @@ class _StoryListScreenState extends State<StoryListScreen> {
   }
 }
 
-class StoryDetailScreen extends StatelessWidget {
-  final GhostStory story;
-
-  const StoryDetailScreen({super.key, required this.story});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(story.title, style: const TextStyle(color: Colors.red)),
-        backgroundColor: Colors.black,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
-        ),
-      ),
-      backgroundColor: Colors.black,
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(
-              story.imagePath,
-              width: double.infinity,
-              height: 200,
-              fit: BoxFit.cover,
-            ),
-            const SizedBox(height: 20),
-            Text(
-              story.title,
-              style: const TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                color: Colors.red,
-              ),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              story.fullStory,
-              style: const TextStyle(
-                fontSize: 16,
-                height: 1.5,
-                color: Colors.white,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
