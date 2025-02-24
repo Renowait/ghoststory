@@ -13,7 +13,7 @@ class CategoryGhostListScreen extends StatefulWidget {
 }
 
 class _CategoryGhostListScreenState extends State<CategoryGhostListScreen> {
-  final List<GhostStory> allStories = const [
+  final List<GhostStory> stories = [
     GhostStory(
       title: "ฆ่าตัวตายในห้องน้ำ ",
       description: "ห้องน้ำอันแสนเศร้า",
@@ -319,7 +319,7 @@ class _CategoryGhostListScreenState extends State<CategoryGhostListScreen> {
   @override
   void initState() {
     super.initState();
-    filteredStories = allStories.where((story) => story.category == widget.category).toList();
+    filteredStories = stories.where((story) => story.category == widget.category).toList();
   }
 
   @override

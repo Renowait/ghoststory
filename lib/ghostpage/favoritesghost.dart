@@ -1,8 +1,9 @@
-// favoritesghost.dart
+
 import 'package:fluttepro/ghostpage/ghost_story.dart';
+import 'package:fluttepro/navbar/navbar.dart';
 import 'package:flutter/material.dart';
 import 'ghost.dart';
-import 'ghoststory.dart'; 
+
 
 class FavoritesGhostScreen extends StatelessWidget {
   const FavoritesGhostScreen({super.key});
@@ -15,7 +16,12 @@ class FavoritesGhostScreen extends StatelessWidget {
         backgroundColor: Colors.black,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => Navbar()), 
+            );
+          },
         ),
       ),
       backgroundColor: Colors.black,
