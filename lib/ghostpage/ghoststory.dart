@@ -330,7 +330,7 @@ class _StoryListScreenState extends State<StoryListScreen> {
 
   // ฟังก์ชันเริ่มเล่นเพลงพื้นหลังแบบวนซ้ำ
   Future<void> _startBackgroundMusic() async {
-    await audioPlayer.setSource(AssetSource('background_music.mp3'));
+    await audioPlayer.setSource(AssetSource('assets/song/hororsound.mp3'));
     await audioPlayer.setVolume(volume);
     await audioPlayer.setReleaseMode(ReleaseMode.loop); // เล่นวนซ้ำ
     if (isPlaying) {
