@@ -1,6 +1,6 @@
 import 'package:fluttepro/ghostpage/ghost_story.dart';
 import 'package:flutter/material.dart';
-import 'ghost.dart'; // นำเข้า GhostStory จาก ghost.dart
+import 'ghost.dart'; 
 
 
 class CategoryGhostListScreen extends StatefulWidget {
@@ -331,7 +331,12 @@ class _CategoryGhostListScreenState extends State<CategoryGhostListScreen> {
               ? 'เรื่องผีมหาลัย'
               : widget.category == 'short'
                   ? 'เรื่องผีสั้น'
-                  : 'เรื่องผีต่างประเทศ',
+                  : widget.category == 'international'
+                  ? 'เรื่องผีต่างประเทศ'
+                  : widget.category == 'joke'
+                  ? 'เรื่องผีตลกๆ'
+                  : 'เรื่องทั่วไป',
+                  
           style: const TextStyle(color: Colors.red),
         ),
         backgroundColor: Colors.black,

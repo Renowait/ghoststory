@@ -22,7 +22,7 @@ class _OnboardState extends State<Onboard> {
       backgroundColor: const Color.fromARGB(255, 0, 0, 0),
       body: Column(
         children: [
-          Expanded(child: body()),  // ทำให้ body ขยายเต็มที่
+          Expanded(child: body()),  
           buildDots(),
           button()
         ],
@@ -45,7 +45,7 @@ class _OnboardState extends State<Onboard> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(controller.items[index].image, height: 250), // ปรับขนาด
+              Image.asset(controller.items[index].image, height: 250), 
               const SizedBox(height: 20),
               Text(
                 controller.items[index].titel,

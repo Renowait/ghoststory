@@ -26,12 +26,12 @@ class SlashScreen extends StatelessWidget {
         ],
       ),
       nextScreen: const Onboard(),
-      backgroundColor: const Color.fromARGB(255, 0, 0, 0), // ใช้สีที่นุ่มนวลขึ้น
+      backgroundColor: const Color.fromARGB(255, 0, 0, 0), 
       duration: 3000,
-      splashTransition: SplashTransition.fadeTransition, // เพิ่ม animation transition
+      splashTransition: SplashTransition.fadeTransition, 
       animationDuration: const Duration(milliseconds: 1000),
-      splashIconSize: 250, // ขนาดของ splash content
-      centered: true, // จัดกึ่งกลาง
+      splashIconSize: 250, 
+      centered: true, 
     );
   }
 }

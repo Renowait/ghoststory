@@ -312,8 +312,8 @@ class _StoryListScreenState extends State<StoryListScreen> {
   ];
   
   final AudioPlayer audioPlayer = AudioPlayer();
-  bool isPlaying = true; // สถานะการเล่นเพลง
-  double volume = 0.5; // ระดับเสียงเริ่มต้น (0.0 - 1.0)
+  bool isPlaying = true; 
+  double volume = 0.5; 
 
   @override
   void initState() {
@@ -332,13 +332,13 @@ class _StoryListScreenState extends State<StoryListScreen> {
   Future<void> _startBackgroundMusic() async {
     await audioPlayer.setSource(AssetSource('assets/song/hororsound.mp3'));
     await audioPlayer.setVolume(volume);
-    await audioPlayer.setReleaseMode(ReleaseMode.loop); // เล่นวนซ้ำ
+    await audioPlayer.setReleaseMode(ReleaseMode.loop); 
     if (isPlaying) {
       await audioPlayer.resume();
     }
   }
 
-  // ฟังก์ชันสลับสถานะการเล่น/หยุดเพลง
+  
   void _toggleMusic() {
     setState(() {
       isPlaying = !isPlaying;
@@ -350,7 +350,7 @@ class _StoryListScreenState extends State<StoryListScreen> {
     });
   }
 
-  // ฟังก์ชันปรับระดับเสียง
+  
   void _setVolume(double newVolume) {
     setState(() {
       volume = newVolume;
